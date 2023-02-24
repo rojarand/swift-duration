@@ -1,5 +1,5 @@
 import XCTest
-@testable import swift_duration
+@testable import Duration
 
 final class DurationTests: XCTestCase {
     

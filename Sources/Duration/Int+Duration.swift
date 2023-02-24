@@ -1,11 +1,10 @@
 //
-//  Duration+Int.swift
-//  swift-duration
+//  Int+Duration.swift
+//  Duration
 //
-//  Created by Robert Andrzejczyk on 23/02/2023.
+//  Created by Robert Andrzejczyk on 24/02/2023.
 //
-
-import Foundation
+import Duration
 
 extension Int {
     

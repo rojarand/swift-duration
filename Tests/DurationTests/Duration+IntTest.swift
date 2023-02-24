@@ -1,12 +1,12 @@
 //
 //  Duration+Int.swift
-//  swift-durationTests
+//  DurationTests
 //
 //  Created by Robert Andrzejczyk on 23/02/2023.
 //
 
 import XCTest
-@testable import swift_duration
+@testable import Duration
 
 final class Duration_Int: XCTestCase {
 

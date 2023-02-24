@@ -1,3 +1,3 @@
-# swift-duration
+# Duration
 
 A description of this package.

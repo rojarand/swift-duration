@@ -1,11 +1,11 @@
 //
 //  Duration+Double.swift
-//  swift-duration
+//  Duration
 //
 //  Created by Robert Andrzejczyk on 23/02/2023.
 //
 
-import Foundation
+import Duration
 
 extension Double {
     
