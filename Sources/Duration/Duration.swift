@@ -24,6 +24,17 @@ extension Duration {
 
 extension Duration {
     
+    static func - (lhs: Self, rhs: Self) -> Self {
+        Duration.seconds(lhs.timeInterval - rhs.timeInterval)
+    }
+    
+    static func -= (lhs: inout Self, rhs: Self) {
+        lhs.timeInterval -= rhs.timeInterval
+    }
+}
+
+extension Duration {
+    
     static let day = 24 * hour
     static let hour = 60.0 * minute
     static let minute = 60.0

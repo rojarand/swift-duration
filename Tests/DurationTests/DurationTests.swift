@@ -28,5 +28,19 @@ final class DurationTests: XCTestCase {
             print(Date())
         }
     */
+}
+
+final class DurationSubtractionTests: XCTestCase {
+    
+    func test_duration_is_subtractable() throws {
+        var duration = Duration.seconds(1)
+        duration -= Duration.milliseconds(50)
+        XCTAssertEqual(duration.inMilliseconds, 950.0, accuracy: Duration.nano)
+    }
+    
+    func test_subtraction_of_duration_produces_expected_value() throws {
+        let duration: Duration = .seconds(1) - .milliseconds(300)
+        XCTAssertEqual(duration.inMilliseconds, 700.0, accuracy: Duration.nano)
+    }
     
 }
