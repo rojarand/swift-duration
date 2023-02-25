@@ -6,12 +6,11 @@
 //
 
 import Foundation
-import Duration
 
 @available(macOS 10.15, iOS 13.0, watchOS 6.0, tvOS 13.0, *)
 extension Task where Success == Never, Failure == Never {
 
-    public static func sleep(duration: Duration) async throws {
+    public static func sleep(for duration: Duration) async throws {
         try await sleep(nanoseconds: UInt64(duration.inNanoseconds))
     }
 }
