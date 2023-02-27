@@ -5,7 +5,7 @@ final class DurationTests: XCTestCase {
     
     func test_duration_is_addable() throws {
         var duration = Duration.seconds(1)
-        duration += Duration.milliseconds(50)
+        duration += .milliseconds(50)
         XCTAssertEqual(duration.inMilliseconds, 1050.0)
     }
     
@@ -43,4 +43,17 @@ final class DurationSubtractionTests: XCTestCase {
         XCTAssertEqual(duration.inMilliseconds, 700.0, accuracy: Duration.nano)
     }
     
+}
+
+final class DurationMultiplicationTests: XCTestCase {
+    
+    func test_duration_multiplies_by_integer() throws {
+        let duration = Duration.seconds(1) * 2
+        XCTAssertEqual(duration.inSeconds, 2.0)
+    }
+    
+    func test_duration_multiplies_by_double() throws {
+        let duration = Duration.seconds(1) * 2.0
+        XCTAssertEqual(duration.inSeconds, 2.0)
+    }
 }

@@ -14,7 +14,7 @@ extension Duration: Equatable {}
 extension Duration {
     
     static func + (lhs: Self, rhs: Self) -> Self {
-        Duration.seconds(lhs.timeInterval + rhs.timeInterval)
+        .seconds(lhs.timeInterval + rhs.timeInterval)
     }
     
     static func += (lhs: inout Self, rhs: Self) {
@@ -25,12 +25,24 @@ extension Duration {
 extension Duration {
     
     static func - (lhs: Self, rhs: Self) -> Self {
-        Duration.seconds(lhs.timeInterval - rhs.timeInterval)
+        .seconds(lhs.timeInterval - rhs.timeInterval)
     }
     
     static func -= (lhs: inout Self, rhs: Self) {
         lhs.timeInterval -= rhs.timeInterval
     }
+}
+
+extension Duration {
+    
+    static func * (lhs: Self, rhs: Double) -> Self {
+        .seconds(lhs.timeInterval * rhs)
+    }
+    
+    static func * (lhs: Self, rhs: Int) -> Self {
+        .seconds(lhs.timeInterval * TimeInterval(rhs))
+    }
+
 }
 
 extension Duration {
