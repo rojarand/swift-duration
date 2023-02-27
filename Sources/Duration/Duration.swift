@@ -23,7 +23,6 @@ extension Duration {
 }
 
 extension Duration {
-    
     static func - (lhs: Self, rhs: Self) -> Self {
         .seconds(lhs.timeInterval - rhs.timeInterval)
     }
@@ -34,7 +33,6 @@ extension Duration {
 }
 
 extension Duration {
-    
     static func * (lhs: Self, rhs: Double) -> Self {
         .seconds(lhs.timeInterval * rhs)
     }
@@ -42,7 +40,16 @@ extension Duration {
     static func * (lhs: Self, rhs: Int) -> Self {
         .seconds(lhs.timeInterval * TimeInterval(rhs))
     }
+}
 
+extension Duration {
+    static func / (lhs: Self, rhs: Double) -> Self {
+        .seconds(lhs.timeInterval / rhs)
+    }
+    
+    static func / (lhs: Self, rhs: Int) -> Self {
+        .seconds(lhs.timeInterval / TimeInterval(rhs))
+    }
 }
 
 extension Duration {

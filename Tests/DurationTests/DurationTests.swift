@@ -57,3 +57,16 @@ final class DurationMultiplicationTests: XCTestCase {
         XCTAssertEqual(duration.inSeconds, 2.0)
     }
 }
+
+final class DurationDivisionTests: XCTestCase {
+    
+    func test_duration_divides_by_integer() throws {
+        let duration = Duration.milliseconds(500) / 2
+        XCTAssertEqual(duration.inMilliseconds, 250.0)
+    }
+    
+    func test_duration_dividies_by_double() throws {
+        let duration = Duration.milliseconds(500) / 2.0
+        XCTAssertEqual(duration.inMilliseconds, 250.0)
+    }
+}
