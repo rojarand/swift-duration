@@ -6,14 +6,17 @@
 //
 
 import Foundation
-import Duration
 
 extension DispatchQueue {
     
-    public func asyncAfter(duration: Duration,
-                           qos: DispatchQoS = .unspecified,
-                           flags: DispatchWorkItemFlags = [],
-                           execute work: @escaping @convention(block) () -> Void) {
+    public func async(after duration: Duration,
+                      qos: DispatchQoS = .unspecified,
+                      flags: DispatchWorkItemFlags = [],
+                      execute work: @escaping @convention(block) () -> Void) {
         asyncAfter(deadline: .now() + duration.inSeconds, qos: qos, flags: flags, execute: work)
+    }
+    
+    public func async(after duration: Duration, execute: DispatchWorkItem) {
+        asyncAfter(deadline: .now() + duration.inSeconds, execute: execute)
     }
 }
