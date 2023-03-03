@@ -7,11 +7,27 @@
 
 extension Double {
     
+    public var hours: Duration {
+        .hours(self)
+    }
+    
+    public var minutes: Duration {
+        .minutes(self)
+    }
+    
     public var seconds: Duration {
-        Duration.seconds(self)
+        .seconds(self)
     }
     
     public var milliseconds: Duration {
-        Duration.milliseconds(self)
+        .milliseconds(self)
+    }
+    
+    public var microseconds: Duration {
+        .microseconds(self)
+    }
+    
+    public var nanoseconds: Duration {
+        .nanoseconds(self)
     }
 }

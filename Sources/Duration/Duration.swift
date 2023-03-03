@@ -13,41 +13,41 @@ extension Duration: Equatable {}
 
 extension Duration {
     
-    static func + (lhs: Self, rhs: Self) -> Self {
+    public static func + (lhs: Self, rhs: Self) -> Self {
         .seconds(lhs.timeInterval + rhs.timeInterval)
     }
     
-    static func += (lhs: inout Self, rhs: Self) {
+    public static func += (lhs: inout Self, rhs: Self) {
         lhs.timeInterval += rhs.timeInterval
     }
 }
 
 extension Duration {
-    static func - (lhs: Self, rhs: Self) -> Self {
+    public static func - (lhs: Self, rhs: Self) -> Self {
         .seconds(lhs.timeInterval - rhs.timeInterval)
     }
     
-    static func -= (lhs: inout Self, rhs: Self) {
+    public static func -= (lhs: inout Self, rhs: Self) {
         lhs.timeInterval -= rhs.timeInterval
     }
 }
 
 extension Duration {
-    static func * (lhs: Self, rhs: Double) -> Self {
+    public static func * (lhs: Self, rhs: Double) -> Self {
         .seconds(lhs.timeInterval * rhs)
     }
     
-    static func * (lhs: Self, rhs: Int) -> Self {
+    public static func * (lhs: Self, rhs: Int) -> Self {
         .seconds(lhs.timeInterval * TimeInterval(rhs))
     }
 }
 
 extension Duration {
-    static func / (lhs: Self, rhs: Double) -> Self {
+    public static func / (lhs: Self, rhs: Double) -> Self {
         .seconds(lhs.timeInterval / rhs)
     }
     
-    static func / (lhs: Self, rhs: Int) -> Self {
+    public static func / (lhs: Self, rhs: Int) -> Self {
         .seconds(lhs.timeInterval / TimeInterval(rhs))
     }
 }
@@ -94,8 +94,16 @@ extension Duration {
         Duration(timeInterval: amount * Self.hour)
     }
     
+    public static func hours(_ amount: Int) -> Duration {
+        Duration(timeInterval: Double(amount) * Self.hour)
+    }
+    
     public static func minutes(_ amount: Double) -> Duration {
         Duration(timeInterval: amount * Self.minute)
+    }
+    
+    public static func minutes(_ amount: Int) -> Duration {
+        Duration(timeInterval: Double(amount) * Self.minute)
     }
     
     public static func seconds(_ amount: Double) -> Duration {
@@ -118,8 +126,24 @@ extension Duration {
         Duration(timeInterval: amount * Self.micro)
     }
     
+    public static func microseconds(_ amount: Int) -> Duration {
+        Duration(timeInterval: Double(amount) * Self.micro)
+    }
+    
     public static func nanoseconds(_ amount: Double) -> Duration {
         Duration(timeInterval: amount * Self.nano)
+    }
+    
+    public static func nanoseconds(_ amount: Int) -> Duration {
+        Duration(timeInterval: Double(amount) * Self.nano)
+    }
+    
+    public var positive: Bool {
+        timeInterval >= 0
+    }
+    
+    public var negative: Bool {
+        !positive
     }
 }
 
