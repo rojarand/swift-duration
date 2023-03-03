@@ -22,12 +22,6 @@ final class DurationTests: XCTestCase {
         XCTAssertEqual(Duration.hours(2).inSeconds, 7200.0)
         
     }
-    
-    /*
-    DispatchQueue.main.asyncAfter(duration: .milliseconds(1)) {
-            print(Date())
-        }
-    */
 }
 
 final class DurationSubtractionTests: XCTestCase {
