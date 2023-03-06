@@ -95,6 +95,14 @@ extension Duration {
         timeInterval / Self.nano
     }
     
+    public static func days(_ amount: Double) -> Duration {
+        Duration(timeInterval: amount * Self.day)
+    }
+    
+    public static func days(_ amount: Int) -> Duration {
+        Duration(timeInterval: Double(amount) * Self.day)
+    }
+    
     public static func hours(_ amount: Double) -> Duration {
         Duration(timeInterval: amount * Self.hour)
     }
