@@ -20,7 +20,6 @@ final class DurationTests: XCTestCase {
     
     func test_hours_converts_to_seconds() throws {
         XCTAssertEqual(Duration.hours(2).inSeconds, 7200.0)
-        
     }
 }
 
@@ -62,5 +61,28 @@ final class DurationDivisionTests: XCTestCase {
     func test_duration_dividies_by_double() throws {
         let duration = Duration.milliseconds(500) / 2.0
         XCTAssertEqual(duration.inMilliseconds, 250.0)
+    }
+}
+
+final class DurationComparisionTests: XCTestCase {
+    
+    func test_durations_are_equal() throws {
+        XCTAssertEqual(Duration.milliseconds(1000), Duration.seconds(1))
+    }
+    
+    func test_duration_is_shorter() throws {
+        XCTAssertTrue(Duration.milliseconds(500) < Duration.seconds(1))
+    }
+    
+    func test_duration_is_shorter_or_equal() throws {
+        XCTAssertTrue(Duration.milliseconds(500) <= Duration.milliseconds(500))
+    }
+    
+    func test_duration_is_longer() throws {
+        XCTAssertTrue(Duration.seconds(1) > Duration.milliseconds(500))
+    }
+    
+    func test_duration_is_longer_or_equal() throws {
+        XCTAssertTrue(Duration.seconds(1) >= Duration.milliseconds(500))
     }
 }

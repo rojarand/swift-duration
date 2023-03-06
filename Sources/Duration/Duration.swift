@@ -9,7 +9,12 @@ public struct Duration {
     }
 }
 
-extension Duration: Equatable {}
+extension Duration: Comparable {
+    
+    public static func < (lhs: Self, rhs: Self) -> Bool {
+        lhs.timeInterval < rhs.timeInterval
+    }
+}
 
 extension Duration {
     
