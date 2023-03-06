@@ -7,6 +7,10 @@
 
 extension Double {
     
+    public var days: Duration {
+        .days(self)
+    }
+    
     public var hours: Duration {
         .hours(self)
     }
