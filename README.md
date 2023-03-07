@@ -2,7 +2,7 @@
 
 [![](https://img.shields.io/static/v1?label=Swift%20Compatibility&message=5.7%20|%205.6%20|%205.5&color=blue)]() [![](https://img.shields.io/static/v1?label=Platform%20Compatibility&message=iOS%20|%20macOS%20|%20tvOS%20|%20watchOS&color=blue)]()
 
-**Duration** is a `Swift` library. The library simplifies dealing with time intervals, given in various time units and variable types.
+**Duration** is a `Swift` library. The library **simplifies** dealing with time intervals, given in various time units and variable types.
 
 ## Usage example
 
@@ -22,7 +22,9 @@ a few lines later ...
 
 Does the "execute" method expect microseconds or milliseconds? ... This is the question 
 */
-execute(after: 500)
+execute(after: 500) {
+    //action
+}
 ```
 , the implementation can be simplified to the following form:
 
@@ -35,7 +37,9 @@ func execute(after duration: Duration, action: @escaping () -> Void) {
     }
 }
 ...
-execute(after: 500.milliseconds)
+execute(after: 500.milliseconds) {
+    //action
+}
 ```
 
 There is a bug in the first snippet. Did you notice that?
@@ -106,7 +110,7 @@ let (duration, result) = try await Duration.measure {
 }
 ```
 
-### Wide range of units: 
+### Wide range of supported units: 
 - days, 
 - hours, 
 - minutes, 
