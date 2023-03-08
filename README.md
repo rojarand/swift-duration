@@ -2,6 +2,9 @@
 
 [![](https://img.shields.io/static/v1?label=Swift%20Compatibility&message=5.7%20|%205.6%20|%205.5&color=blue)]() [![](https://img.shields.io/static/v1?label=Platform%20Compatibility&message=iOS%20|%20macOS%20|%20tvOS%20|%20watchOS&color=blue)]()
 
+[![Swift](https://github.com/rojarand/swift-duration/actions/workflows/swift.yml/badge.svg)](https://github.com/rojarand/swift-duration/actions/workflows/swift.yml)
+
+
 **Duration** is a `Swift` library. The library **simplifies** dealing with time intervals, given in various time units and variable types.
 
 ## Usage example
