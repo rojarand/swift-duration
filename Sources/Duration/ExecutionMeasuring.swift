@@ -27,7 +27,6 @@ extension Duration {
         return (duration: .seconds(endTime-startTime), result: result)
     }
     
-    
     @available(macOS 10.15, iOS 13.0, watchOS 6.0, tvOS 13.0, *)
     @inline(__always)
     public static func measure<T>(durationOf action: () async throws -> T)
