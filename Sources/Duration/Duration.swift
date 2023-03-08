@@ -159,5 +159,3 @@ extension Duration {
         !positive
     }
 }
-
-
