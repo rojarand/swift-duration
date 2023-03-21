@@ -19,9 +19,7 @@ func execute(after intervalInMilliseconds: UInt, action: @escaping () -> Void) {
 ...
 /*
 a few lines later ...
-
-(-_-)ゞ
-
+🤔 
 Does the "execute" method expect microseconds or milliseconds? ... This is the question 
 */
 execute(after: 500) {

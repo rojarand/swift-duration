@@ -35,7 +35,6 @@ final class DurationSubtractionTests: XCTestCase {
         let duration: Duration = .seconds(1) - .milliseconds(300)
         XCTAssertEqual(duration.inMilliseconds, 700.0, accuracy: Duration.nano)
     }
-    
 }
 
 final class DurationMultiplicationTests: XCTestCase {
@@ -84,5 +83,23 @@ final class DurationComparisionTests: XCTestCase {
     
     func test_duration_is_longer_or_equal() throws {
         XCTAssertTrue(Duration.seconds(1) >= Duration.milliseconds(500))
+    }
+    
+    func test_duration_is_positive() throws {
+        XCTAssertTrue(Duration.seconds(1).isPositive)
+        let duration = Duration.seconds(1) - Duration.milliseconds(999)
+        XCTAssertTrue(duration.isPositive)
+    }
+    
+    func test_duration_is_zero() throws {
+        XCTAssertTrue(Duration.seconds(0).isZero)
+        let duration = Duration.seconds(1) - Duration.milliseconds(1000)
+        XCTAssertTrue(duration.isZero)
+    }
+    
+    func test_duration_is_negative() throws {
+        XCTAssertTrue(Duration.seconds(-1).isNegative)
+        let duration = Duration.milliseconds(999) - Duration.seconds(1)
+        XCTAssertTrue(duration.isNegative)
     }
 }
