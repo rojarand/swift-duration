@@ -151,11 +151,15 @@ extension Duration {
         Duration(timeInterval: Double(amount) * Self.nano)
     }
     
-    public var positive: Bool {
-        timeInterval >= 0
+    public var isPositive: Bool {
+        timeInterval > 0
     }
     
-    public var negative: Bool {
-        !positive
+    public var isNegative: Bool {
+        timeInterval < 0
+    }
+    
+    public var isZero: Bool {
+        timeInterval == 0.0
     }
 }
