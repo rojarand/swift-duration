@@ -163,5 +163,3 @@ extension Duration {
         timeInterval == 0.0
     }
 }
-
-
